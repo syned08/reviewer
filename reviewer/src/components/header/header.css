@@ -1,0 +1,38 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: linear-gradient(90deg, #f0e7fe 0%, #b5c6e0 99.2%);
+}
+
+.nav {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.telegram {
+  width: 40px;
+  height: 40px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.optional-links {
+  margin-right: 25px;
+}
+
+.optional-links * {
+  margin-right: 25px;
+}

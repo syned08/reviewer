@@ -1,0 +1,40 @@
+.home-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 7px 9px 8px 2px rgba(0, 0, 0, 0.25);
+  padding: 24px 30px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.home-card:hover {
+  transform: scale(1.1);
+}
+
+.home-card:active {
+  transform: scale(0.9);
+  box-shadow: none;
+}
+
+.home-card__img-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.home-card__img {
+  width: 120px;
+  height: 120px;
+}
+
+.home-card__title {
+  margin: 30px 0 0;
+  font-weight: normal;
+}

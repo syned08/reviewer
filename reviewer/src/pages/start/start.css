@@ -1,0 +1,195 @@
+.start-header {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(90deg, #f0e7fe 0%, #b5c6e0 99.2%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-header__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-header__left,
+.start-header__right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+}
+
+.start-header__left__heading {
+  font-size: 4rem;
+}
+
+.go-to-login-btn {
+  align-self: flex-start;
+  background-color: #8352fd;
+  font-size: 16px;
+  padding: 12px 32px;
+  color: #fff;
+  border-radius: 6px;
+  margin-top: 40px;
+}
+
+.idea {
+  width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  .start-header__left__heading {
+    font-size: 3rem;
+  }
+}
+
+.how-works {
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+.how-works__heading,
+.telegram-section__heading {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 40px;
+}
+
+.how-works__items {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  align-items: center;
+}
+
+.how-works__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 175px;
+  width: 180px;
+}
+
+.how-works__item img {
+  max-width: 160px;
+}
+
+.how-works__item img:hover {
+  animation: shake 0.7s ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  30% {
+    transform: translate(-1px, 2px) rotate(-30deg);
+  }
+  60% {
+    transform: translate(-1px, -1px) rotate(30deg);
+  }
+  100% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+}
+
+.how-works__item p {
+  font-size: 18px;
+  text-align: center;
+}
+
+.telegram-section {
+  background: linear-gradient(90deg, #f0e7fe 0%, #b5c6e0 99.2%);
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.telegram-section__items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.telegram-section__items p {
+  font-size: 18px;
+}
+
+.telegram-home {
+  width: 110px;
+  margin-left: 50px;
+}
+
+.telegram-home:hover {
+  animation-play-state: paused;
+}
+
+.footer-start {
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  background-color: #000;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.footer-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-container div p:first-child {
+  margin-bottom: 20px;
+}
+
+.footer-container p {
+  color: #fff;
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.telegram-home {
+  -webkit-animation: rotating 3s linear infinite;
+  -moz-animation: rotating 3s linear infinite;
+  -ms-animation: rotating 3s linear infinite;
+  -o-animation: rotating 3s linear infinite;
+  animation: rotating 3s linear infinite;
+}

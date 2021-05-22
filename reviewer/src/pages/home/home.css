@@ -1,0 +1,14 @@
+.main-home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #f0e7fe 0%, #b5c6e0 99.2%);
+}
+
+.home__cards-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,15 @@
+.c-page__search__find-result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.find-result__image {
+  width: 55%;
+}
+
+@media screen and (max-width: 880px) {
+  .find-result__image {
+    width: 80%;
+  }
+}

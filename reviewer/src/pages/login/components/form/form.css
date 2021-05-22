@@ -1,0 +1,101 @@
+.form-wrapper {
+  padding: 15px 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 30%;
+  z-index: 10;
+  filter: drop-shadow(9px 9px 7px rgba(0, 0, 0, 0.25));
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-header {
+  font-weight: normal;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-error {
+  font-weight: normal;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: red;
+}
+
+.form label {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.label_password {
+  margin-top: 15px;
+}
+
+.form input {
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 16px;
+  padding: 5px 15px;
+  outline: none;
+}
+
+#form__submit {
+  font-size: 16px;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 6px;
+  width: 112px;
+  background-color: #8352fd;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-wrapper {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.google_wrapper {
+  position: absolute;
+  top: 0;
+  right: calc(50% - 135px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.google {
+  width: 35px;
+}
+
+.register_wrapper {
+  margin: 30px 0 30px;
+  align-self: center;
+}
+
+.register_btn {
+  border-bottom: 1px solid #000;
+  padding: 3px 5px;
+}
+
+@media screen and (max-width: 1100px) {
+  .form-wrapper {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .form-wrapper {
+    width: 70%;
+  }
+}

@@ -1,0 +1,32 @@
+.c-page__main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.c-page__main .container {
+  z-index: 5;
+}
+
+.c-page__main__heading {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.c-page__main__last-reviews__heading {
+  font-size: 24px;
+  margin-bottom: 40px;
+  font-weight: normal;
+}
+
+.c-page__main__image {
+  position: absolute;
+  top: 10%;
+  right: 50px;
+  transform: rotate(22deg);
+  width: 300px;
+  max-width: 50%;
+}
