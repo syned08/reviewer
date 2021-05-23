@@ -40,7 +40,7 @@ export default function SearchCPage({ data, category }) {
   };
 
   return (
-    <div className="c-page__search">
+    <section className="c-page__search" id="c-page__search">
       <div className="container">
         <h2 className="c-page__search__heading">{`Поиск по названию ${pageName}:`}</h2>
         <div className="c-page__search-find__wrapper">
@@ -80,6 +80,6 @@ export default function SearchCPage({ data, category }) {
           background: '#D6C5FD',
         }}
       />
-    </div>
+    </section>
   );
 }

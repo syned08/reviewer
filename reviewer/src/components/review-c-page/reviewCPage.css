@@ -1,0 +1,13 @@
+.c-page__review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 100px;
+}
+
+.c-page__review__heading {
+  font-size: 28px;
+  font-weight: normal;
+  margin: 40px 0 30px;
+  text-align: center;
+}

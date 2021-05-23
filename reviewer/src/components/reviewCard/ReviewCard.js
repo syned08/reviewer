@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
 import 'moment/locale/ru';
 import './reviewCard.css';
+import { MdOpenInNew } from 'react-icons/md';
 
 import emptyStar from '../../assets/img/empty-star.svg';
 import fillStar from '../../assets/img/fill-star.svg';
+import ReviewCardFull from '../reviewCardFull';
 
 export default function ReviewCard({ el, category, style = {} }) {
+  const [showFull, setShowFull] = useState(null);
   let authorsFieldName = '';
 
   switch (category) {
@@ -34,6 +37,15 @@ export default function ReviewCard({ el, category, style = {} }) {
 
   return (
     <div className="review-item" style={style}>
+      {showFull && (
+        <ReviewCardFull
+          el={el}
+          authorsFieldName={authorsFieldName}
+          getRating={getRating}
+          getReviewDate={getReviewDate}
+          onClickClose={() => setShowFull(false)}
+        />
+      )}
       <h4 className="review-item__heading">{el.title}</h4>
       <div className="review-item__rating">
         {getRating(el.rating).map((el, i) => {
@@ -50,6 +62,11 @@ export default function ReviewCard({ el, category, style = {} }) {
       <div className="review-item__date__container">
         <p className="review-item__date">{getReviewDate(el.creationDate)}</p>
       </div>
+      <MdOpenInNew
+        size="1.5em"
+        className="show__full"
+        onClick={() => setShowFull(true)}
+      />
     </div>
   );
 }

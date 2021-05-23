@@ -19,8 +19,8 @@ export default function HeaderCPage({ category }) {
 
   return (
     <Header>
-      <AnchorLink href="#search">Поиск</AnchorLink>
-      <AnchorLink href="#create-review">Оставить отзыв</AnchorLink>
+      <AnchorLink href="#c-page__search">Поиск</AnchorLink>
+      <AnchorLink href="#c-page__review">Оставить отзыв</AnchorLink>
       <Link to={`/home/${category}/my-reviews`}>Мои отзывы</Link>
       <a href="/" onClick={handleLogout}>
         Выйти

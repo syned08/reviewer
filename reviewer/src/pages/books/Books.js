@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import Header from '../../components/header';
-import { useAuth } from '../../contexts/AuthContext';
-import { Link } from 'react-router-dom';
-// import LastReviews from '../../components/lastReviews';
+import React, { useState, useEffect } from 'react';
 import Loader from '../../components/loader';
-import './books.css';
+import HeaderCPage from '../../components/header-c-page';
+import MainCPage from '../../components/main-c-page';
+import SearchCPage from '../../components/search-c-page';
+import ReviewCPage from '../../components/review-c-page';
 
-export default function Books() {
-  const { logout } = useAuth();
+export default function Movies() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -17,21 +15,12 @@ export default function Books() {
 
   const getReviews = async () => {
     const data = await fetch(
-      'https://script.google.com/macros/s/AKfycbz1nBbhcKJ-LYUEUg5dpY5fcTz0ZMkRlLP57E3m8jqWVNpo9fp-pzqbnZgM_ZLPLhvfqw/exec?category=book&reviews=all'
+      'https://script.google.com/macros/s/AKfycbz6bZt6VRP91g6QPqbo-DOHDhE37SscU66sMcoPlZOdHdmnlYnN3zCyh_XVbfNcfIgcYA/exec?category=book&reviews=all'
     );
     const allReviews = await data.json();
+
     setReviews(allReviews.allReviews);
     setLoading(false);
-  };
-
-  const handleLogout = async e => {
-    e.preventDefault();
-
-    try {
-      await logout();
-    } catch (error) {
-      console.log(error);
-    }
   };
 
   if (loading) {
@@ -44,18 +33,10 @@ export default function Books() {
 
   return (
     <div className="c-page">
-      <Header>
-        <a href="#search">Поиск</a>
-        <a href="#create-review">Оставить отзыв</a>
-        <Link to="/home/books/my-reviews">Мои отзывы</Link>
-        <a href="/" onClick={handleLogout}>
-          Выйти
-        </a>
-      </Header>
-      <div className="container c-page__header">
-        <h1 className="c-page__heading">Книги</h1>
-        {/* <LastReviews data={reviews.slice(-10)} name="о книгах" /> */}
-      </div>
+      <HeaderCPage category="books" />
+      <MainCPage data={[...reviews].reverse().slice(0, 10)} category="books" />
+      <SearchCPage data={reviews} category="books" />
+      <ReviewCPage category="books" getReviews={getReviews} />
     </div>
   );
 }

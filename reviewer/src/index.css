@@ -4,6 +4,13 @@
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
   text-decoration: none;
+}
+
+a,
+h1,
+h2,
+h3,
+h4 {
   color: black;
 }
 

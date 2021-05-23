@@ -5,6 +5,7 @@
   background-color: #fff;
   padding-bottom: 40px;
   position: relative;
+  z-index: 1;
 }
 
 .c-page__search__heading {
@@ -36,11 +37,10 @@
   font-size: 18px;
 }
 
-/* Change the white to any color */
-.search-input:-webkit-autofill,
-.search-input:-webkit-autofill:hover,
-.search-input:-webkit-autofill:focus,
-.search-input:-webkit-autofill:active {
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
   box-shadow: 0 0 0 30px white inset !important;
 }

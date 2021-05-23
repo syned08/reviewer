@@ -8,11 +8,13 @@
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
+  position: relative;
 }
 
 .review-item__heading {
   font-size: 18px;
   margin-bottom: 8px;
+  max-width: 80%;
 }
 
 .review-item__rating,
@@ -41,4 +43,10 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+}
+
+.show__full {
+  position: absolute;
+  cursor: pointer;
+  right: 20px;
 }
