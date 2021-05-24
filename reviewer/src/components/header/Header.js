@@ -12,11 +12,7 @@ export default function Header({ children }) {
         <div className="right">
           <div className="optional-links">{children}</div>
           <div>
-            <a
-              href="https://t.me/joinchat/Q3BylAD2x__VnQE0"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://t.me/BotFather" target="_blank" rel="noreferrer">
               <img src="telegram.ico" alt="telegram" className="telegram" />
             </a>
           </div>

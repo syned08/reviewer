@@ -1,0 +1,17 @@
+.icon-flip {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.review-item__back {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-item__control {
+  margin-left: 15px;
+  cursor: pointer;
+}

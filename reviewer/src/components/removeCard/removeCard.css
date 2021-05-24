@@ -1,0 +1,30 @@
+.remove-card {
+  background-color: #fff;
+  padding: 20px 40px;
+  border-radius: 10px;
+}
+
+.remove-card__heading {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.remove-card__controls {
+  display: flex;
+  justify-content: space-around;
+}
+
+.remove-card__controls__not,
+.remove-card__controls__yes {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.remove-card__controls__not {
+  padding: 0 5px 5px;
+  border-bottom: 1px solid black;
+}
+
+.remove-card__controls__yes {
+  color: #e72923;
+}

@@ -4,14 +4,16 @@ import { useAuth } from '../../contexts/AuthContext';
 
 import './reviewForm.css';
 
-export default function ReviewForm({ category, getReviews }) {
-  const [rating, setRating] = useState(6);
+export default function ReviewForm({ category, getReviews, el = null }) {
+  const [rating, setRating] = useState(el?.rating || 6);
   const [hover, setHover] = useState(null);
-  const [name, setName] = useState('');
-  const [authors, setAuthors] = useState('');
-  const [genre, setGenre] = useState('');
-  const [year, setYear] = useState('');
-  const [text, setText] = useState('');
+  const [name, setName] = useState(el?.title || '');
+  const [authors, setAuthors] = useState(
+    el?.authors || el?.directors || el?.developers || ''
+  );
+  const [genre, setGenre] = useState(el?.genre.join(', ') || '');
+  const [year, setYear] = useState(el?.year || '');
+  const [text, setText] = useState(el?.description || '');
   const [sending, setSending] = useState(false);
   const { currentUser } = useAuth();
 
@@ -53,9 +55,18 @@ export default function ReviewForm({ category, getReviews }) {
     e.preventDefault();
 
     setSending(true);
-    const query = `https://script.google.com/macros/s/AKfycbz6bZt6VRP91g6QPqbo-DOHDhE37SscU66sMcoPlZOdHdmnlYnN3zCyh_XVbfNcfIgcYA/exec?category=${categoryField}&add=true&title=${name}&${authorsField}=${authors}&year=${year}&genre=${genre}&rating=${rating}&description=${text}&creationDate=${Date.now()}&userEmail=${
+    let query = `https://script.google.com/macros/s/AKfycbz6bZt6VRP91g6QPqbo-DOHDhE37SscU66sMcoPlZOdHdmnlYnN3zCyh_XVbfNcfIgcYA/exec?category=${categoryField}&add=true&title=${name}&${authorsField}=${authors}&year=${year}&genre=${genre}&rating=${rating}&description=${text}&creationDate=${Date.now()}&userEmail=${
       currentUser.email
     }`;
+
+    if (el) {
+      query = `https://script.google.com/macros/s/AKfycbz6bZt6VRP91g6QPqbo-DOHDhE37SscU66sMcoPlZOdHdmnlYnN3zCyh_XVbfNcfIgcYA/exec?category=${categoryField}&change=true&id=${
+        el.id
+      }&title=${name}&${authorsField}=${authors}&year=${year}&genre=${genre}&rating=${rating}&description=${text}&creationDate=${Date.now()}&userEmail=${
+        currentUser.email
+      }`;
+    }
+
     const res = await fetch(query, {
       method: 'POST',
     });
@@ -63,13 +74,17 @@ export default function ReviewForm({ category, getReviews }) {
     setSending(false);
 
     if (data.result.includes('OK')) {
-      setRating(6);
-      setName('');
-      setAuthors('');
-      setGenre('');
-      setYear('');
-      setText('');
-      getReviews();
+      if (el) {
+        window.history.back();
+      } else {
+        setRating(6);
+        setName('');
+        setAuthors('');
+        setGenre('');
+        setYear('');
+        setText('');
+        getReviews();
+      }
     }
   };
 

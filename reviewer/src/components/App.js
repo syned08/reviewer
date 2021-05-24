@@ -14,6 +14,8 @@ import PrivateRoute from '../components/privateRoute';
 import Movies from '../pages/movies';
 import Books from '../pages/books';
 import Games from '../pages/games';
+import MyReviews from '../pages/my-reviews';
+import EditReview from '../pages/edit-review';
 
 function App() {
   return (
@@ -28,6 +30,16 @@ function App() {
             <PrivateRoute exact path="/home/movies" component={Movies} />
             <PrivateRoute exact path="/home/books" component={Books} />
             <PrivateRoute exact path="/home/games" component={Games} />
+            <PrivateRoute
+              exact
+              path="/home/:category/my-reviews"
+              component={MyReviews}
+            />
+            <PrivateRoute
+              exact
+              path="/home/:category/my-reviews/edit"
+              component={EditReview}
+            />
             <Redirect to="/" />
           </Switch>
         </AuthProvider>
