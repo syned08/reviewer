@@ -105,20 +105,21 @@ export default function ReviewForm({ category, getReviews, el = null }) {
           onChange={e => setName(e.target.value)}
           value={name}
         />
-        <label htmlFor="authors">{authorsName}</label>
-        <input
-          type="text"
-          name="authors"
-          id="review-form__authors"
-          onChange={e => setAuthors(e.target.value)}
-          value={authors}
-        />
+        <div>
+          <label htmlFor="authors">{authorsName}</label>
+          <input
+            type="text"
+            name="authors"
+            id="review-form__authors"
+            onChange={e => setAuthors(e.target.value)}
+            value={authors}
+          />
+        </div>
         <label htmlFor="genre">Жанр(ы)</label>
         <input
           type="text"
           name="genre"
           id="review-form__genre"
-          required
           onChange={e => setGenre(e.target.value)}
           value={genre}
         />
@@ -131,10 +132,7 @@ export default function ReviewForm({ category, getReviews, el = null }) {
               type="number"
               name="year"
               id="review-form__year"
-              min="1800"
-              max="2021"
               step="1"
-              required
               onChange={e => setYear(e.target.value)}
               value={year}
             />
@@ -164,7 +162,6 @@ export default function ReviewForm({ category, getReviews, el = null }) {
             </div>
           </div>
         </div>
-        <div></div>
       </fieldset>
       <fieldset>
         <label htmlFor="review">Отзыв</label>

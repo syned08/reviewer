@@ -2,24 +2,19 @@ import React from 'react';
 import './mainCPage.css';
 
 import CardList from '../../components/cardList';
-import books from '../../assets/img/books.svg';
-import games from '../../assets/img/games.svg';
-import movies from '../../assets/img/movies.svg';
 
 export default function MainCPage({ data, category }) {
-  let categoryName,
-    categoryAbout,
-    imgName = '';
+  let categoryName, categoryAbout;
 
   switch (category) {
     case 'movies':
-      [categoryName, categoryAbout, imgName] = ['Фильмы', 'о фильмах', movies];
+      [categoryName, categoryAbout] = ['Фильмы', 'о фильмах'];
       break;
     case 'books':
-      [categoryName, categoryAbout, imgName] = ['Книги', 'о книгах', books];
+      [categoryName, categoryAbout] = ['Книги', 'о книгах'];
       break;
     case 'games':
-      [categoryName, categoryAbout, imgName] = ['Игры', 'об играх', games];
+      [categoryName, categoryAbout] = ['Игры', 'об играх'];
       break;
     default:
       break;

@@ -21,6 +21,15 @@ export default function Movies() {
 
     setReviews(allReviews.allReviews);
     setLoading(false);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+    const list = document.querySelector('.reviews-wrapper');
+    list.scrollTo({
+      left: 0,
+      behavior: 'smooth',
+    });
   };
 
   if (loading) {
