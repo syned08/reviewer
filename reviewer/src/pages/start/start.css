@@ -193,3 +193,33 @@
   -o-animation: rotating 3s linear infinite;
   animation: rotating 3s linear infinite;
 }
+
+@media screen and (max-width: 630px) {
+  .start-header__right {
+    display: none;
+  }
+
+  .go-to-login-btn {
+    padding: 20px 50px;
+    width: 300px;
+    text-align: center;
+  }
+
+  .how-works__items {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .how-works__item {
+    margin: 20px 0;
+  }
+
+  .telegram {
+    display: none;
+  }
+
+  .optional-links {
+    display: flex;
+    flex-direction: column;
+  }
+}

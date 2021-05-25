@@ -11,12 +11,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 75px;
+  min-height: 75px;
 }
 
 .logo {
   font-weight: bold;
   font-size: 32px;
+  margin-right: 20px;
 }
 
 .telegram {

@@ -2,3 +2,43 @@
   background: linear-gradient(90deg, #f0e7fe 0%, #b5c6e0 99.2%);
   min-height: 100vh;
 }
+
+@media screen and (max-width: 571px) {
+  .review-form {
+    min-width: 300px !important;
+    width: 100% !important;
+  }
+
+  .set__yr {
+    flex-direction: column;
+  }
+
+  .set_r {
+    margin-left: 0 !important;
+  }
+
+  .star {
+    width: 80%;
+  }
+
+  .search-input {
+    width: 80%;
+  }
+
+  .find-result__image,
+  .c-page__main__image {
+    display: none;
+  }
+
+  .c-page__search__find-result {
+    flex-direction: column;
+  }
+
+  .c-page__search__find-result .review-item {
+    width: 100% !important;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+}

@@ -17,3 +17,28 @@
 .blogging-img {
   width: 100%;
 }
+
+@media screen and (max-width: 530px) {
+  .google_wrapper {
+    position: static !important;
+    margin-left: 10px;
+  }
+
+  .register_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #form__submit {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .image-asset {
+    display: none;
+  }
+}

@@ -19,3 +19,9 @@
   font-weight: normal;
   margin: 20px 0 10px;
 }
+
+.mr-page__heading__no_reviews {
+  font-size: 28px;
+  text-align: center;
+  font-weight: normal;
+}

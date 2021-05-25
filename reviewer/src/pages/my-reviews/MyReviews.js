@@ -114,6 +114,11 @@ export default function MyReviews({ match }) {
       </Header>
       <div className="container">
         <h1 className="mr-page__heading">Мои отзывы</h1>
+        {getReviewsPeriod().length === 0 && (
+          <h4 className="mr-page__heading__no_reviews">
+            У вас пока нет отзывов
+          </h4>
+        )}
         {getReviewsPeriod().map(el => {
           const data = userReviews.filter(
             review => convertDateToStr(review.creationDate) === el

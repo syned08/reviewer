@@ -6,14 +6,17 @@ import games from '../../../../assets/img/games.svg';
 import { Link } from 'react-router-dom';
 
 export default function Card({ category }) {
-  let icon = movies;
+  let icon = movies,
+    categoryName = 'Фильмы';
 
   switch (category) {
     case 'books':
       icon = books;
+      categoryName = 'Книги';
       break;
     case 'games':
       icon = games;
+      categoryName = 'Игры';
       break;
     default:
       break;
@@ -24,10 +27,7 @@ export default function Card({ category }) {
       <div className="home-card__img-wrapper">
         <img src={icon} alt={category} className="home-card__img" />
       </div>
-      <h3 className="home-card__title">{`${category[0].toUpperCase()}${category.substring(
-        1,
-        category.length
-      )}`}</h3>
+      <h3 className="home-card__title">{categoryName}</h3>
     </Link>
   );
 }
