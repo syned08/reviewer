@@ -4,11 +4,6 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 1;
-}
-
-.c-page__main .container {
-  z-index: 5;
 }
 
 .c-page__main__heading {

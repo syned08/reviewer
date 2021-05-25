@@ -8,8 +8,6 @@ import category from '../../assets/img/category.svg';
 import review from '../../assets/img/review.svg';
 import publish from '../../assets/img/publish.svg';
 
-import AssetBlock from '../../components/assetBlock';
-
 export default function Start() {
   return (
     <div className="start">
@@ -35,25 +33,6 @@ export default function Start() {
             <img src={idea} alt="idea" className="idea" />
           </div>
         </div>
-        <AssetBlock
-          style={{
-            bottom: 155,
-            left: -10,
-            width: '20%',
-            height: 40,
-            background: '#FCE8E4',
-            zIndex: 1,
-          }}
-        />
-        <AssetBlock
-          style={{
-            bottom: 110,
-            left: -10,
-            width: '30%',
-            height: 55,
-            background: '#D6C5FD',
-          }}
-        />
       </section>
       <section className="how-works container">
         <h2 className="how-works__heading">Как это работает</h2>

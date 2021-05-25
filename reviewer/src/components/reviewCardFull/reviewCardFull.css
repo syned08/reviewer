@@ -1,6 +1,5 @@
 .review-item__full__container {
   position: fixed;
-  z-index: 200;
   top: 0;
   bottom: 0;
   left: 0;
@@ -9,7 +8,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 100px 0;
+  padding: 100px 0 0;
+  z-index: 250;
 }
 
 .review-item__full {
@@ -17,7 +17,8 @@
   padding: 20px 30px;
   width: 60%;
   position: relative;
-  height: 100%;
+  height: fit-content;
+  max-height: 100%;
   overflow-y: scroll;
 }
 

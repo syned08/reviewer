@@ -36,7 +36,6 @@ export default function MainCPage({ data, category }) {
           <CardList data={data} category={category} />
         </article>
       </div>
-      <img src={imgName} alt="books" className="c-page__main__image" />
     </section>
   );
 }

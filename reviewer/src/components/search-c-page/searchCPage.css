@@ -5,7 +5,6 @@
   background-color: #fff;
   padding-bottom: 40px;
   position: relative;
-  z-index: 1;
 }
 
 .c-page__search__heading {
@@ -17,7 +16,6 @@
 
 .c-page__search .container {
   width: 100%;
-  z-index: 5;
 }
 
 .c-page__search-find__wrapper {

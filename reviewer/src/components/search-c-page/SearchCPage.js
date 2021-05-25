@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import './searchCPage.css';
 import search from '../../assets/img/search.svg';
 import FoundReviews from '../../components/foundReviews';
-import AssetBlock from '../../components/assetBlock';
 
 export default function SearchCPage({ data, category }) {
   const [query, setQuery] = useState('');
@@ -61,25 +60,6 @@ export default function SearchCPage({ data, category }) {
           category={category}
         />
       </div>
-      <AssetBlock
-        style={{
-          bottom: 155,
-          left: -10,
-          width: '30%',
-          height: 40,
-          background: '#FCE8E4',
-          zIndex: 1,
-        }}
-      />
-      <AssetBlock
-        style={{
-          bottom: 110,
-          left: -10,
-          width: '40%',
-          height: 55,
-          background: '#D6C5FD',
-        }}
-      />
     </section>
   );
 }
