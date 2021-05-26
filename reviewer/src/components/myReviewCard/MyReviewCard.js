@@ -78,6 +78,11 @@ export default function MyReviewCard({
         <div key="front">
           <div className="review-item" style={style}>
             <h4 className="review-item__heading">{el.title}</h4>
+            {el.localTitle && (
+              <h4 className="review-item__heading review-item__heading__original">
+                ({el.localTitle})
+              </h4>
+            )}
             <div className="review-item__rating">
               {getRating(el.rating).map((el, i) => {
                 const imgName = el === 1 ? fillStar : emptyStar;
@@ -98,6 +103,9 @@ export default function MyReviewCard({
               <p className="review-item__date">
                 {getReviewDate(el.creationDate)}
               </p>
+              {el.viewed && (
+                <p className="review-item__viewed">Повторное ознакомление</p>
+              )}
             </div>
             <MdFlip
               size="1.5em"
@@ -125,9 +133,6 @@ export default function MyReviewCard({
                 size="2.5em"
                 className="review-item__control"
                 color="#0275d8"
-                // onClick={() =>
-                //   history.push(`/home/${category}/my-reviews/edit/${el.id}`)
-                // }
               />
             </Link>
             <MdDelete

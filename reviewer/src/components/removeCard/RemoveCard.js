@@ -14,7 +14,7 @@ export default function RemoveCard({
   const handleDelete = async () => {
     setRemoving(true);
     const res = await fetch(
-      `https://script.google.com/macros/s/AKfycbz6bZt6VRP91g6QPqbo-DOHDhE37SscU66sMcoPlZOdHdmnlYnN3zCyh_XVbfNcfIgcYA/exec?category=${category}&delete=true&id=${id}&email=${currentUser.email}`,
+      `https://script.google.com/macros/s/AKfycbyCzcLstQfPHLHZLYCKLHl6odOXKRuJdxQ8SSaVVEzA_hDPYOTa6uIHmJ8ZkyBsY1A0RA/exec?category=${category}&delete=true&id=${id}&email=${currentUser.email}`,
       {
         method: 'POST',
       }

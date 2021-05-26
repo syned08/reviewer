@@ -8,12 +8,14 @@ export default function ReviewForm({ category, getReviews, el = null }) {
   const [rating, setRating] = useState(el?.rating || 6);
   const [hover, setHover] = useState(null);
   const [name, setName] = useState(el?.title || '');
+  const [originalName, setOriginalName] = useState(el?.localTitle || '');
   const [authors, setAuthors] = useState(
     el?.authors || el?.directors || el?.developers || ''
   );
   const [genre, setGenre] = useState(el?.genre.join(', ') || '');
   const [year, setYear] = useState(el?.year || '');
   const [text, setText] = useState(el?.description || '');
+  const [viewed, setViewed] = useState(el?.viewed || false);
   const [sending, setSending] = useState(false);
   const { currentUser } = useAuth();
 
@@ -55,16 +57,16 @@ export default function ReviewForm({ category, getReviews, el = null }) {
     e.preventDefault();
 
     setSending(true);
-    let query = `https://script.google.com/macros/s/AKfycbz6bZt6VRP91g6QPqbo-DOHDhE37SscU66sMcoPlZOdHdmnlYnN3zCyh_XVbfNcfIgcYA/exec?category=${categoryField}&add=true&title=${name}&${authorsField}=${authors}&year=${year}&genre=${genre}&rating=${rating}&description=${text}&creationDate=${Date.now()}&userEmail=${
+    let query = `https://script.google.com/macros/s/AKfycbyCzcLstQfPHLHZLYCKLHl6odOXKRuJdxQ8SSaVVEzA_hDPYOTa6uIHmJ8ZkyBsY1A0RA/exec?category=${categoryField}&add=true&title=${name}&${authorsField}=${authors}&year=${year}&genre=${genre}&rating=${rating}&description=${text}&creationDate=${Date.now()}&userEmail=${
       currentUser.email
-    }`;
+    }&localTitle=${originalName}&viewed=${viewed}`;
 
     if (el) {
-      query = `https://script.google.com/macros/s/AKfycbz6bZt6VRP91g6QPqbo-DOHDhE37SscU66sMcoPlZOdHdmnlYnN3zCyh_XVbfNcfIgcYA/exec?category=${categoryField}&change=true&id=${
+      query = `https://script.google.com/macros/s/AKfycbyCzcLstQfPHLHZLYCKLHl6odOXKRuJdxQ8SSaVVEzA_hDPYOTa6uIHmJ8ZkyBsY1A0RA/exec?category=${categoryField}&change=true&id=${
         el.id
       }&title=${name}&${authorsField}=${authors}&year=${year}&genre=${genre}&rating=${rating}&description=${text}&creationDate=${Date.now()}&userEmail=${
         currentUser.email
-      }`;
+      }&localTitle=${originalName}&viewed=${viewed}`;
     }
 
     const res = await fetch(query, {
@@ -104,6 +106,14 @@ export default function ReviewForm({ category, getReviews, el = null }) {
           required
           onChange={e => setName(e.target.value)}
           value={name}
+        />
+        <label htmlFor="local-name">Оригинальное название {categoryName}</label>
+        <input
+          type="text"
+          name="local-name"
+          id="review-form__original-name"
+          onChange={e => setOriginalName(e.target.value)}
+          value={originalName}
         />
         <div>
           <label htmlFor="authors">{authorsName}</label>
@@ -161,6 +171,16 @@ export default function ReviewForm({ category, getReviews, el = null }) {
               })}
             </div>
           </div>
+        </div>
+        <div className="form__viewed">
+          <label htmlFor="viewed">Ознакомлен повторно </label>
+          <input
+            type="checkbox"
+            id="viewed"
+            name="viewed"
+            onChange={e => setViewed(e.target.checked)}
+            checked={viewed}
+          />
         </div>
       </fieldset>
       <fieldset>

@@ -47,6 +47,11 @@ export default function ReviewCard({ el, category, style = {} }) {
         />
       )}
       <h4 className="review-item__heading">{el.title}</h4>
+      {el.localTitle && (
+        <h4 className="review-item__heading review-item__heading__original">
+          ({el.localTitle})
+        </h4>
+      )}
       <div className="review-item__rating">
         {getRating(el.rating).map((el, i) => {
           const imgName = el === 1 ? fillStar : emptyStar;
@@ -61,6 +66,9 @@ export default function ReviewCard({ el, category, style = {} }) {
       <p className="review-item__text">{el.description}</p>
       <div className="review-item__date__container">
         <p className="review-item__date">{getReviewDate(el.creationDate)}</p>
+        {el.viewed && (
+          <p className="review-item__viewed">Повторное ознакомление</p>
+        )}
       </div>
       <MdOpenInNew
         size="1.5em"

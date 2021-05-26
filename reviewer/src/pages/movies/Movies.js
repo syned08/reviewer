@@ -16,7 +16,7 @@ export default function Movies() {
 
   const getReviews = async () => {
     const data = await fetch(
-      'https://script.google.com/macros/s/AKfycbz6bZt6VRP91g6QPqbo-DOHDhE37SscU66sMcoPlZOdHdmnlYnN3zCyh_XVbfNcfIgcYA/exec?category=film&reviews=all'
+      'https://script.google.com/macros/s/AKfycbyCzcLstQfPHLHZLYCKLHl6odOXKRuJdxQ8SSaVVEzA_hDPYOTa6uIHmJ8ZkyBsY1A0RA/exec?category=film&reviews=all'
     );
     const allReviews = await data.json();
 

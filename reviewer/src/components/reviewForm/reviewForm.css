@@ -106,3 +106,19 @@ input[type='radio'] {
   color: #fff;
   font-size: 30px;
 }
+
+.form__viewed {
+  display: flex;
+  align-items: center;
+  margin: 12px 0 16px;
+}
+
+.form__viewed * {
+  margin-bottom: 0 !important;
+}
+
+input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+}

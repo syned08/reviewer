@@ -33,7 +33,7 @@ export default function MyReviews({ match }) {
   useEffect(() => {
     const getUserReviews = async () => {
       const res = await fetch(
-        `https://script.google.com/macros/s/AKfycbz6bZt6VRP91g6QPqbo-DOHDhE37SscU66sMcoPlZOdHdmnlYnN3zCyh_XVbfNcfIgcYA/exec?category=${categoryName}&email=${currentUser.email}`
+        `https://script.google.com/macros/s/AKfycbyCzcLstQfPHLHZLYCKLHl6odOXKRuJdxQ8SSaVVEzA_hDPYOTa6uIHmJ8ZkyBsY1A0RA/exec?category=${categoryName}&email=${currentUser.email}`
       );
       const data = await res.json();
 
@@ -87,7 +87,7 @@ export default function MyReviews({ match }) {
 
   const updateUserReviews = async () => {
     const res = await fetch(
-      `https://script.google.com/macros/s/AKfycbz6bZt6VRP91g6QPqbo-DOHDhE37SscU66sMcoPlZOdHdmnlYnN3zCyh_XVbfNcfIgcYA/exec?category=${categoryName}&email=${currentUser.email}`
+      `https://script.google.com/macros/s/AKfycbyCzcLstQfPHLHZLYCKLHl6odOXKRuJdxQ8SSaVVEzA_hDPYOTa6uIHmJ8ZkyBsY1A0RA/exec?category=${categoryName}&email=${currentUser.email}`
     );
     const data = await res.json();
 
