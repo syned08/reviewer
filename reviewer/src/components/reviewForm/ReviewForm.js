@@ -44,7 +44,7 @@ export default function ReviewForm({ category, getReviews, el = null }) {
       [categoryName, authorsName, yearName, authorsField, categoryField] = [
         'книги',
         'Автор(ы)',
-        'издательства',
+        'издания',
         'authors',
         'book',
       ];

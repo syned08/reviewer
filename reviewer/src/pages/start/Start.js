@@ -56,7 +56,11 @@ export default function Start() {
           <h2 className="telegram-section__heading">Телеграм бот</h2>
           <div className="telegram-section__items">
             <p>Пользуйся сервисом через популярный месенджер!</p>
-            <a href="https://t.me/BotFather" target="_blank" rel="noreferrer">
+            <a
+              href="http://t.me/reviewer_practice_bot"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img
                 src="telegram.ico"
                 alt="telegram"
